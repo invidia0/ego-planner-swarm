@@ -1,3 +1,50 @@
+# EGO-Planner-Swarm Docker Quick Start Guide
+
+>[!NOTE]
+> This guide is for running a fast simulation of the EGO-Planner-Swarm package in a Docker container. But it is still in its early stages.
+
+## Prerequisites
+1. Install Docker on your machine. You can follow the instructions [here](https://docs.docker.com/get-docker/).
+
+2. Clone the repository.
+```bash
+git clone https://github.com/invidia0/ego-planner-swarm.git
+```
+or
+```bash
+git clone git@github.com:invidia0/ego-planner-swarm.git
+```
+
+## Quick Start with Docker
+
+1. **Build** the docker image
+```bash
+cd ~/ego-planner-swarm
+docker build -t egoplannerswarm .
+```
+
+2. **Run** the docker container. \
+You can run the container just once and then start the docker container using the container id.
+```bash
+cd ~/ego-planner-swarm/Docker
+sh docker_run.sh egoplannerswarm
+```
+
+3. **Start** the docker container using the container id.
+```bash
+docker start -i <container_id>
+```
+
+4. **Quick simulation test**
+```bash
+roslaunch ego_planner simple_run.launch
+```
+
+---
+>[!NOTE]
+> Original README.md below
+
+
 # Quick Start within 3 Minutes 
 Compiling tests passed on ubuntu **16.04, 18.04, and 20.04** with ros installed.
 You can just execute the following commands one by one.
