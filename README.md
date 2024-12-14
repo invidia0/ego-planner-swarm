@@ -32,8 +32,11 @@ sh docker_run.sh egoplannerswarm
 
 3. **Start** the docker container using the container id.
 ```bash
-docker start -i <container_id>
+docker exec -it $(docker ps -aqf "ancestor=egoplannerswarm") /bin/bash
 ```
+If you have multiple containers, please use:
+- The container id instead of `$(docker ps -aqf "ancestor=egoplannerswarm")`. You can also use the container name.
+- The file "docker_start.sh" in the folder "Docker".
 
 4. **Quick simulation test**
 ```bash
